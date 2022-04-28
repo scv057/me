@@ -20,8 +20,6 @@ const colorMap: IColorMap = {
 
 export const ThemeContext = React.createContext<string>('light');
 
-export function useTheme() {
-    const theme = useContext(ThemeContext);
-
-    return colorMap[theme];
+export function useTheme(): string {
+    return useContext(ThemeContext);
 }
