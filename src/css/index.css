@@ -1,0 +1,12 @@
+:root {
+    --background-color: gray;
+}
+
+:root[data-theme=dark] {
+    --font-color: white
+}
+
+
+:root[data-theme=light] {
+    --font-color: black;
+}
