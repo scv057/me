@@ -2,6 +2,7 @@ import React from "react";
 import * as styles from './layout.module.css'
 import '../pages/index.module.css';
 import Theme from "./theme";
+import { Link } from "gatsby";
 
 interface IProps {
     pageTitle: string;
@@ -16,6 +17,12 @@ const Layout: React.FC<IProps> = (props) => {
             <div className={styles.layout}>
                 <title>{ pageTitle }</title>
                 <h1>{ pageTitle }</h1>
+                <nav>
+                    <ul>
+                        <li><Link to={'/'}>Index</Link></li>
+                        <li><Link to={'/about'}>About</Link></li>
+                    </ul>
+                </nav>
                 { children }
             </div>
             <div className={ styles.grid }>

@@ -7,13 +7,6 @@ const AboutPage = ()=>{
     const [name, setName] = useState('Andrew Xie');
     return (
         <Layout pageTitle='About Me'>
-            <p className={styles.content}>
-                I'm { name }
-                <p>
-                    <Link to={ '/about' }>About</Link>
-                    <Link to={ '/' }>Index</Link>
-                </p>
-            </p>
         </Layout>
     );
 }

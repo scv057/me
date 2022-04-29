@@ -16,3 +16,7 @@ body {
     position: relative;
     overflow: hidden;
 }
+
+li {
+    list-style: none;
+}
