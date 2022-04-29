@@ -20,6 +20,7 @@ const Layout: React.FC<IProps> = (props) => {
                 { children }
             </div>
             <div className={ styles.grid }>
+                <div className={styles.gridHighlight} />
                 { arr.map((value, index) => {
                     return (
                         <div className={ styles.item } key={ index }/>

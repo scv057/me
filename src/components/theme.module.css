@@ -1,5 +1,10 @@
 .theme {
-    position: absolute;
+    position: fixed;
     z-index: 100;
     color: var(--font-color);
+    right: 4vw;
+    height: 30vh;
+    width: 0.5vw;
+    top: 35vh;
+    cursor: pointer;
 }

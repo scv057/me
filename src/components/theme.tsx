@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import '../css/var.css';
 import * as styles from './theme.module.css';
+import Lamp from "./lamp";
 
 
 const Theme: React.FC = (props) => {
@@ -32,11 +33,10 @@ const Theme: React.FC = (props) => {
     }
 
     return (
-        <div className={styles.theme}>
-            {theme}
-            <button onClick={ changeTheme }>toggle</button>
+        <div className={ styles.theme }>
+            <Lamp changeTheme={ changeTheme } theme={ theme }/>
         </div>
-    )
+    );
 };
 
 export default Theme;
