@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import Theme from "../components/theme";
+import * as styles from './layout.module.css'
+import '../css/index.css';
+import Theme from "./theme";
 
 interface IProps {
     pageTitle: string;
@@ -8,22 +10,23 @@ interface IProps {
 
 const Layout: React.FC<IProps> = (props) => {
     const {pageTitle, children} = props;
-
+    const arr = new Array(100).fill(1);
     return (
-        <div>
-            <title>{ pageTitle }</title>
+        <>
             <Theme/>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                </ul>
-            </nav>
-            <main>
+            <div className={styles.layout}>
+                <title>{ pageTitle }</title>
                 <h1>{ pageTitle }</h1>
                 { children }
-            </main>
-        </div>
+            </div>
+            <div className={ styles.grid }>
+                { arr.map((value, index) => {
+                    return (
+                        <div className={ styles.item } key={ index }/>
+                    )
+                }) }
+            </div>
+        </>
     );
 };
 

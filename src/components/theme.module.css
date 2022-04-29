@@ -1,0 +1,5 @@
+.theme {
+    position: absolute;
+    z-index: 100;
+    color: var(--font-color);
+}

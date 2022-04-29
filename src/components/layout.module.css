@@ -1,0 +1,27 @@
+.grid {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-gap: 1px;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.item {
+    background: var(--background-color);
+    transition: background .25s ease;
+}
+
+.layout {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

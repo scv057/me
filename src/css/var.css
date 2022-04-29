@@ -1,0 +1,14 @@
+:root {
+}
+
+:root[data-theme=dark] {
+    --font-color: white;
+    --background-color: #0E0027;
+    --shine-color: #5fb0f7;
+}
+
+:root[data-theme=light] {
+    --font-color: black;
+    --background-color: white;
+    --shine-color: #5fb0f7;
+}

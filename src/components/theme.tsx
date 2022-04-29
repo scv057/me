@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import '../css/index.css';
+import '../css/var.css';
+import * as styles from './theme.module.css';
+
 
 const Theme: React.FC = (props) => {
     const [ theme, setTheme ] = useState('');
@@ -30,7 +32,7 @@ const Theme: React.FC = (props) => {
     }
 
     return (
-        <div>
+        <div className={styles.theme}>
             {theme}
             <button onClick={ changeTheme }>toggle</button>
         </div>

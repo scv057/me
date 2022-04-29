@@ -1,13 +1,20 @@
-import React, {useEffect, useState} from "react"
+import React from "react"
 import Layout from "../components/layout";
-
-const css_var = `var()`
+import '../css/index.css';
+import Theme from "../components/theme";
+import { Link } from "gatsby";
 
 const IndexPage = () => {
+
     return (
-        <Layout pageTitle="Home Page">
-            <p style={{color: 'var(--font-color)', backgroundColor: 'var(--background-color)'}}>I'm making this by following the Gatsby Tutorial.</p>
-        </Layout>
+        <>
+            <Layout pageTitle={ 'sb' }>
+                <p>
+                    <Link to={ '/about' }>About</Link>
+                    <Link to={ '/' }>Index</Link>
+                </p>
+            </Layout>
+        </>
     );
 };
 
