@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "gatsby";
 import * as styles from './layout.module.css'
-import '../css/index.css';
+import '../pages/index.module.css';
 import Theme from "./theme";
 
 interface IProps {

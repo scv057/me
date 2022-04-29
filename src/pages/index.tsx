@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout";
-import '../css/index.css';
-import Theme from "../components/theme";
+import * as styles from './index.module.css';
+import '../css/main.css';
 import { Link } from "gatsby";
 
 const IndexPage = () => {
