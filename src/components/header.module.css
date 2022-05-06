@@ -1,0 +1,11 @@
+.header {
+    fill: var(--link-color);
+    display: flex;
+    color: inherit;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex-direction: column;
+}

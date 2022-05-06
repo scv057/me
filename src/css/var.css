@@ -4,10 +4,17 @@
     --shine-color: #5fb0f7;
     --shine-color-rgb: 95, 176, 247;
     --lamp-color: white;
+    --link-color: #31066C;
+    --primary-color: #bd93f9;
+    --secondary-color: #9547b7;
+    --background-color-1: white;
+    --background-color-2: #bd93f917;
 }
 
 :root {
-
+    --boxshadow-size: 6px;
+    --boxshadow-size-2: 4px;
+    --boxshadow-size-3: 2px;
 }
 
 :root[data-theme=light] {
@@ -16,4 +23,9 @@
     --shine-color: black;
     --shine-color-rgb: 0, 0, 0;
     --lamp-color: black;
+    --link-color: #4e1e86;
+    --primary-color: #bd93f9;
+    --secondary-color: #9547b7;
+    --background-color-1: white;
+    --background-color-2: #bd93f917;
 }

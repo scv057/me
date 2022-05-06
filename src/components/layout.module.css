@@ -23,13 +23,31 @@
     transition: background .25s ease;
 }
 
-.layout {
+.background {
     position: absolute;
     width: 100vw;
     height: 100vh;
     z-index: 0;
     color: var(--font-color);
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 675px;
+}
+
+.header {
+    position: fixed;
+    width: 200px;
+    /*margin: 20px 20px;*/
+    top: 1.5em;
+    left: 1.5em;
+    z-index: 10;
 }
