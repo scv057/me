@@ -1,18 +1,23 @@
 import React from "react";
 import {graphql, Link} from "gatsby";
-import Layout from "../../components/layout";
+import {LRLayout} from "../../components/layout";
+import * as styles from './index.module.css';
+import Label from "../../components/label";
 
 const Blog = ({data}) => {
-  return <Layout pageTitle="My Blog Posts">
+  return <LRLayout pageTitle="Andrew's BLog">
     {
       data.allMdx.nodes.map(node => (
-        <article key={node.id}>
-          <h2><Link to={`/blog/${node.slug}`}>{node.frontmatter.title}</Link></h2>
-          <p>Posted: {node.frontmatter.date}</p>
-        </article>
+        <div className={styles.blog} key={node.id}>
+          <article >
+            <h2><Link to={`/blog/${node.slug}`}>{node.frontmatter.title}</Link></h2>
+            <p>Posted: {node.frontmatter.date}</p>
+            <Label text={'css'}/>
+          </article>
+        </div>
       ))
     }
-  </Layout>
+  </LRLayout>;
 };
 
 export const query = graphql`
