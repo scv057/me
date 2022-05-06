@@ -3,7 +3,6 @@ import * as styles from './layout.module.css'
 import '../pages/index.module.css';
 import Theme from "./theme";
 import Header from "./header";
-import { Link, useStaticQuery, graphql } from "gatsby";
 
 interface IProps {
     pageTitle?: string;

@@ -8,13 +8,17 @@ const Blog = ({data}) => {
   return <LRLayout pageTitle="Andrew's BLog">
     {
       data.allMdx.nodes.map(node => (
-        <div className={styles.blog} key={node.id}>
+        <Link to={`/blog/${node.slug}`}
+              style={{textDecoration: 'none'}}
+              activeStyle={{}}
+              className={styles.blog}
+              key={node.id}>
           <article >
-            <h2><Link to={`/blog/${node.slug}`}>{node.frontmatter.title}</Link></h2>
+            <h2>{node.frontmatter.title}</h2>
             <p>Posted: {node.frontmatter.date}</p>
             <Label text={'css'}/>
           </article>
-        </div>
+        </Link>
       ))
     }
   </LRLayout>;
