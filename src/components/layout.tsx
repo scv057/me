@@ -1,8 +1,8 @@
 import React from "react";
 import * as styles from './layout.module.css'
 import '../pages/index.module.css';
-import Theme from "./theme";
 import Header from "./header";
+import Lamp from "./lamp";
 
 interface IProps {
     pageTitle?: string;
@@ -13,7 +13,7 @@ const Layout: React.FC<IProps> = (props) => {
 
     return (
         <>
-            <Theme/>
+            <Lamp />
             <div className={ styles.background }>
                 <main className={styles.main}>
                     { children }
@@ -28,7 +28,6 @@ export const LRLayout:React.FC<IProps> = (props) => {
 
     return (
         <>
-            <Theme/>
             <header className={ styles.header }>
                 <Header direction="col"/>
             </header>

@@ -24,8 +24,8 @@ export const ButtonGroup: React.FC<{ links:Array<ILinkProps> }> = (props) => {
     return(
         <li>
             {
-                links.map(({href, content})=>{
-                    return <Link className={styles.link} to={ href } >{ content }</Link>;
+                links.map(({href, content}, index)=>{
+                    return <Link key={index} className={styles.link} to={ href } >{ content }</Link>;
                 })
             }
         </li>

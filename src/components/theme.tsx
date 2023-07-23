@@ -1,42 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { Context, SetStateAction, useEffect, useMemo, useState } from "react";
 import '../css/var.css';
-import * as styles from './theme.module.css';
-import Lamp from "./lamp";
+import { createContext } from "react";
 
+const ThemeContext = createContext({});
 
 const Theme: React.FC = (props) => {
-    const [ theme, setTheme ] = useState('');
+    const {children} = props;
 
-    useEffect(() => {
-        if (!theme) {
-            const themeMode = localStorage.getItem('themeMode');
-            setTheme(themeMode || 'light');
-            localStorage.setItem('themeMode', theme);
-            return;
-        }
-        const doc = document.documentElement;
-        doc.dataset.theme = theme;
-        localStorage.setItem('themeMode', theme);
-    }, [ theme ]);
+    const defaultTheme: string = useMemo(() => {
+        return localStorage.getItem('theme') || 'light';
+    }, []);
 
-    useEffect(() => {
-        const themeMedia = window.matchMedia("(prefers-color-scheme: light)") as MediaQueryList;
-        const themeChangeHandler = (e: { matches: boolean; }) => {
-            e.matches ? setTheme('light') : setTheme('dark');
-        };
-        themeMedia.addListener(themeChangeHandler);
-        return themeMedia.addListener(themeChangeHandler);
-    }, [])
+    const [ theme, setTheme ] = useState(defaultTheme);
 
-    const changeTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
-    }
+    useEffect(()=>{
+        document.querySelector(':root')?.setAttribute('data-theme', theme);
+    }, [theme]);
 
     return (
-        <div className={ styles.theme }>
-            <Lamp changeTheme={ changeTheme } theme={ theme }/>
-        </div>
+        <ThemeContext.Provider value={ {theme, setTheme} }>
+            { children }
+        </ThemeContext.Provider>
     );
 };
 
 export default Theme;
+
+export { ThemeContext };

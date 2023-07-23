@@ -1,17 +1,13 @@
-import React from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import * as styles from './lamp.module.css';
+import { ThemeContext } from './theme';
 
-interface IProps {
-    changeTheme: Function;
-    theme: string;
-}
-
-const Lamp: React.FC<IProps> = (props) => {
-    const {changeTheme, theme} = props;
+const Lamp: React.FC = () => {
+    const {theme, setTheme} = useContext(ThemeContext);
 
     return (
         <div className={ [ styles.lamp, theme === 'dark' && styles.shadow ].join(' ') } onClick={ () => {
-            changeTheme();
+            setTheme(theme === 'light' ? 'dark' : 'light');
         } }/>
     );
 };
