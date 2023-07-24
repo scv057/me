@@ -5,6 +5,8 @@ import React from "react";
 
 const Seo = ({title}) => {
     const data = useStaticQuery(query)
+
+
     return (
         <title>{ title | data.site.siteMetadata.title }</title>
     );

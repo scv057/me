@@ -4,13 +4,14 @@ import {LRLayout} from "../../components/layout";
 import * as styles from './index.module.css';
 import Label from "../../components/label";
 import "@code-hike/mdx/dist/index.css"
-import Seo from "../../components/Seo";
+import Seo from "../../components/seo";
 
 const Blog = ({data}) => {
+
   return <LRLayout pageTitle="Andrew's BLog">
     {
       data.allMdx.nodes.map(node => (
-        <Link to={`/blog/${node.slug}`}
+        <Link to={`/blog/${node.frontmatter.slug}`}
               style={{textDecoration: 'none'}}
               activeStyle={{}}
               className={styles.blog}
@@ -33,8 +34,10 @@ export const query = graphql`
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
+          slug
         }
         id
+        excerpt
       }
     }
   }
