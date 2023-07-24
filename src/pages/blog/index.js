@@ -1,6 +1,6 @@
 import React from "react";
-import {graphql, Link, useStaticQuery} from "gatsby";
-import {LRLayout} from "../../components/layout";
+import {graphql, Link} from "gatsby";
+import DefaultLayout from "../../components/layout";
 import * as styles from './index.module.css';
 import Label from "../../components/label";
 import "@code-hike/mdx/dist/index.css"
@@ -8,7 +8,7 @@ import Seo from "../../components/seo";
 
 const Blog = ({data}) => {
 
-  return <LRLayout pageTitle="Andrew's BLog">
+  return <DefaultLayout pageTitle="Andrew's Blog" layout={"lr"}>
     {
       data.allMdx.nodes.map(node => (
         <Link to={`/blog/${node.frontmatter.slug}`}
@@ -24,7 +24,7 @@ const Blog = ({data}) => {
         </Link>
       ))
     }
-  </LRLayout>;
+  </DefaultLayout>;
 };
 
 export const query = graphql`

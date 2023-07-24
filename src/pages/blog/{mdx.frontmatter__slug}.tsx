@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/layout";
+import DefaultLayout from "../../components/layout";
 import { graphql } from "gatsby";
 // import { MDXRenderer } from "gatsby-plugin-mdx";
 import Theme from "../../components/theme";
@@ -9,11 +9,11 @@ const BlogPost: React.FC<{data, children}> = (props) => {
 
     return (
         <Theme>
-            <Layout pageTitle={ data.mdx.frontmatter.title }>
+            <DefaultLayout pageTitle={ data.mdx.frontmatter.title }>
                 <h1>{ data.mdx.frontmatter.title }</h1>
                 <p>{ data.mdx.frontmatter.date }</p>
                 { children }
-            </Layout>
+            </DefaultLayout>
         </Theme>
     );
 };

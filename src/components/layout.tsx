@@ -3,19 +3,20 @@ import * as styles from './layout.module.css'
 import '../pages/index.module.css';
 import Header from "./header";
 import Lamp from "./lamp";
+import Theme from "./theme";
 
 interface IProps {
     pageTitle?: string;
+    layout?: string
 }
 
 const Layout: React.FC<IProps> = (props) => {
-    const { children} = props;
+    const { pageTitle, children } = props;
 
     return (
         <>
-            <Lamp />
             <div className={ styles.background }>
-                <main className={styles.main}>
+                <main className={ styles.main }>
                     { children }
                 </main>
             </div>
@@ -23,7 +24,7 @@ const Layout: React.FC<IProps> = (props) => {
     );
 };
 
-export const LRLayout:React.FC<IProps> = (props) => {
+const LRLayout:React.FC<IProps> = (props) => {
     const {pageTitle, children} = props;
 
     return (
@@ -44,4 +45,19 @@ export const LRLayout:React.FC<IProps> = (props) => {
     );
 }
 
-export default Layout;
+const DefaultLayout: React.FC<IProps> = (props)=>{
+    const { pageTitle, layout, children } = props;
+
+    return (
+        <>
+            <Theme>
+                <Lamp/>
+                { layout === 'lr' ?
+                    (<LRLayout pageTitle={ pageTitle || '' }>{ children }</LRLayout>) :
+                    (<Layout pageTitle={ pageTitle || '' }>{ children }</Layout>) }
+            </Theme>
+        </>
+    );
+}
+
+export default DefaultLayout;
