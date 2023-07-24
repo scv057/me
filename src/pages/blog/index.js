@@ -1,8 +1,10 @@
 import React from "react";
-import {graphql, Link} from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 import {LRLayout} from "../../components/layout";
 import * as styles from './index.module.css';
 import Label from "../../components/label";
+import "@code-hike/mdx/dist/index.css"
+import Seo from "../../components/Seo";
 
 const Blog = ({data}) => {
   return <LRLayout pageTitle="Andrew's BLog">
@@ -13,7 +15,7 @@ const Blog = ({data}) => {
               activeStyle={{}}
               className={styles.blog}
               key={node.id}>
-          <article >
+          <article>
             <h2>{node.frontmatter.title}</h2>
             <p>Posted: {node.frontmatter.date}</p>
             <Label text={'css'}/>
@@ -33,10 +35,10 @@ export const query = graphql`
           title
         }
         id
-        slug
       }
     }
   }
 `
 
+export const Head = () => <Seo/>;
 export default Blog;

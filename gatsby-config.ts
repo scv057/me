@@ -1,5 +1,7 @@
 import type { GatsbyConfig } from "gatsby"
 
+const {remarkCodeHike} = require("@code-hike/mdx");
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `找自己`,
@@ -16,7 +18,15 @@ const config: GatsbyConfig = {
         path: `${ __dirname }/blog`
       }
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        mdxOptions: {
+          remarkPlugins: [[remarkCodeHike, { theme: "material-palenight" }]],
+        },
+      },
+    },
   ],
 }
 
