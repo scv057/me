@@ -2,18 +2,21 @@ import React from "react";
 import Layout from "../../components/layout";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import Theme from "../../components/theme";
 
 const BlogPost: React.FC<{data: any}> = (props) => {
-    console.log(props);
     const {data} = props;
 
     return (
-        <Layout pageTitle={ data.mdx.frontmatter.title }>
-            <p>{ data.mdx.frontmatter.date }</p>
-            <MDXRenderer>
-                { data.mdx.body }
-            </MDXRenderer>
-        </Layout>
+        <Theme>
+            <Layout pageTitle={ data.mdx.frontmatter.title }>
+                <h1>{ data.mdx.frontmatter.title }</h1>
+                <p>{ data.mdx.frontmatter.date }</p>
+                <MDXRenderer>
+                    { data.mdx.body }
+                </MDXRenderer>
+            </Layout>
+        </Theme>
     );
 };
 

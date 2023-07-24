@@ -1,4 +1,4 @@
-import React, { Context, SetStateAction, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import '../css/var.css';
 import { createContext } from "react";
 
