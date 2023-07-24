@@ -14,6 +14,7 @@ const Theme: React.FC = (props) => {
     const [ theme, setTheme ] = useState(defaultTheme);
 
     useEffect(()=>{
+        localStorage.setItem('theme', theme);
         document.querySelector(':root')?.setAttribute('data-theme', theme);
     }, [theme]);
 
