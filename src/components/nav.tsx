@@ -23,8 +23,8 @@ const textLinks: Array<ILinkProps> = [
     {content: 'Newsletter', href: '/newsletter'}];
 
 const iconLinks = [ {content: <TwitterIcon/>, href: '/about'},
-    {content: <GithubIcon/>, href: '/'},
-    {content: <YoutubeIcon/>, href: '/'} ];
+    {content: <GithubIcon/>, href: 'https://github.com/laoxielearnsth'},
+    {content: <YoutubeIcon/>, href: '/about'} ];
 
 
 const Nav:React.FC<IHeaderProps> = (props) => {

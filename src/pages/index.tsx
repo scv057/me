@@ -6,7 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Nav from "../components/nav";
 import classNames from "classnames";
 
-const Mid = ()=>{
+const Content = ()=>{
     return <div
         className={classNames("flex", "flex-col", "h-screen", "justify-center")}>
         <StaticImage className={ classNames(styles.avatar, "aspect-square", "mb-10", "mx-auto") }
@@ -23,7 +23,7 @@ const IndexPage = () => {
         <>
             <Layout pageTitle={ 'Index' }
                     type={'mid'}
-                    slots={{mid: <Mid/>}} />
+                    slots={{mid: <Content/>}} />
         </>
     );
 };
