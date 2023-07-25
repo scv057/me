@@ -23,7 +23,7 @@ const textLinks: Array<ILinkProps> = [
     {content: 'Newsletter', href: '/newsletter'}];
 
 const iconLinks = [ {content: <TwitterIcon/>, href: '/about'},
-    {content: <GithubIcon/>, href: 'https://github.com/laoxielearnsth'},
+    {content: <GithubIcon/>, href: 'https://github.com/scv057'},
     {content: <YoutubeIcon/>, href: '/about'} ];
 
 
