@@ -10,7 +10,6 @@ import classNames from "classnames";
 
 const Main = ({data})=>{
 
-
   return <>
     <div className={classNames("text-2xl", "mb-6", "mt-8")}>
       Andrew's Blog
@@ -48,7 +47,7 @@ const Blog = ({data}) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
+    allMdx(sort: {fields: frontmatter___date, order: DESC} filter: {id: {ne: "45fdd8f0-7cc6-5327-8751-f11dbfbd836d"}}) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")

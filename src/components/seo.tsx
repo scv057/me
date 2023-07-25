@@ -4,15 +4,7 @@ import React from "react";
 // TODO: twitter og: improve SEO and sharing experience
 
 const Seo = ({title}) => {
-    const data = useStaticQuery(query)
-
-
-    return (
-        <title>{ title | data.site.siteMetadata.title }</title>
-    );
-}
-
-const query = graphql`query MyQuery {
+    const data = useStaticQuery(graphql`query MyQuery {
   site {
     siteMetadata {
       description
@@ -20,5 +12,13 @@ const query = graphql`query MyQuery {
       title
     }
   }
-}`;
+}`)
+
+
+    return (
+        <title>{ title | data.site.siteMetadata.title }</title>
+    );
+}
+
+
 export default Seo
