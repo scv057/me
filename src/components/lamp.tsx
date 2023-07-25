@@ -11,8 +11,9 @@ const Lamp: React.FC = () => {
 
     return (
         <div className={ [ styles.lamp, theme === 'dark' && styles.shadow ].join(' ') }
-             onClick={ () => {setTheme(theme === 'light' ? 'dark' : 'light');
-        } }/>
+             onClick={ () => {
+                 setTheme(theme === 'light' ? 'dark' : 'light');
+             } }/>
     );
 };
 

@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
     width: 100%;
     height: 100%;
@@ -15,5 +9,16 @@ body {
     min-height: 100%;
     position: relative;
     overflow: hidden;
-    transition: color 0.5s ease;
+    transition: color 0.5s linear, background-color 0.2s linear ;
+    background-color: var(--background-color);
+}
+
+:root {
+    --boxshadow-size: 6px;
+    --boxshadow-size-2: 4px;
+    --boxshadow-size-3: 2px;
+}
+
+li {
+    list-style: none;
 }

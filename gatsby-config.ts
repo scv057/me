@@ -11,6 +11,7 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-postcss",
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -21,9 +22,9 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`],
+        extensions: [ `.mdx`, `.md` ],
         mdxOptions: {
-          remarkPlugins: [[remarkCodeHike, { theme: "material-palenight" }]],
+          remarkPlugins: [ [ remarkCodeHike, {theme: "material-palenight"} ] ],
         },
       },
     },

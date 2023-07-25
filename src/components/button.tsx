@@ -1,7 +1,7 @@
 import React from "react";
 import * as styles from './button.module.css';
 import { Link } from "gatsby";
-import { ILinkProps } from './header';
+import { ILinkProps } from './nav';
 
 interface Interface {
     href: string;

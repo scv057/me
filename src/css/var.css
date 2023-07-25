@@ -11,12 +11,6 @@
     --background-color-2: #bd93f917;
 }
 
-:root {
-    --boxshadow-size: 6px;
-    --boxshadow-size-2: 4px;
-    --boxshadow-size-3: 2px;
-}
-
 :root[data-theme=light] {
     --font-color: black;
     --background-color: white;

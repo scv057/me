@@ -27,7 +27,7 @@ const iconLinks = [ {content: <TwitterIcon/>, href: '/about'},
     {content: <YoutubeIcon/>, href: '/'} ];
 
 
-const Header:React.FC<IHeaderProps> = (props) => {
+const Nav:React.FC<IHeaderProps> = (props) => {
     const {direction = 'row'} = props;
 
     return (
@@ -47,4 +47,4 @@ const Header:React.FC<IHeaderProps> = (props) => {
     );
 }
 
-export default Header;
+export default Nav;
