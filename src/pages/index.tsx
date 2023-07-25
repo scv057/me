@@ -4,16 +4,18 @@ import * as styles from './index.module.css';
 import '../css/main.css';
 import { StaticImage } from 'gatsby-plugin-image';
 import Nav from "../components/nav";
+import classNames from "classnames";
 
 const Mid = ()=>{
-    return <>
-        <StaticImage className={ [ styles.avatar, "aspect-square" ].join(" ") }
-                   src="https://s1.vika.cn/space/2022/05/05/2c7a8d84127b49ab870d110a958dc9bb?attname=images.jpeg"
-                   alt="avatar"/>
-        <p className={ "text-4xl" }> Andrew Xie </p>
-        <p className={ "text-2xl" }>Frontend Developer who is unemployed </p>
+    return <div
+        className={classNames("flex", "flex-col", "h-screen", "justify-center")}>
+        <StaticImage className={ classNames(styles.avatar, "aspect-square", "mb-10", "mx-auto") }
+                     src="https://s1.vika.cn/space/2022/05/05/2c7a8d84127b49ab870d110a958dc9bb?attname=images.jpeg"
+                     alt="avatar"/>
+        <p className={ classNames("text-4xl", "text-center", "mt-8", styles.title) }> Andrew Xie </p>
+        <p className={  classNames("text-2xl", "text-center", "mt-8", "mb-8", styles.intro) }>Frontend Developer who is unemployed </p>
         <Nav/>
-    </>;
+    </div>;
 }
 
 const IndexPage = () => {

@@ -1,7 +1,7 @@
 import React from "react";
-import Button, { ButtonGroup } from "./button";
+import Button from "./button";
 import Icons from '../icons/icons';
-import * as styles from './header.module.css';
+import classNames from "classnames";
 
 export interface ILinkProps {
     content: any;
@@ -9,7 +9,7 @@ export interface ILinkProps {
 }
 
 interface IHeaderProps {
-    direction ?: string;
+    direction ?: "row" | "col";
 
 }
 const {TwitterIcon, GithubIcon,YoutubeIcon} = Icons;
@@ -31,17 +31,25 @@ const Nav:React.FC<IHeaderProps> = (props) => {
     const {direction = 'row'} = props;
 
     return (
-        <nav>
-            <ul className={ [styles.header, direction==='col' && styles.col].join(' ') }>
+        <nav className={ classNames("flex", "flex-col") }>
+            <ul className={ classNames("flex", `flex-${ direction }`, "justify-evenly") }>
                 {
                     textLinks.map(
                         ({href, content}, index) => {
                             return <Button href={ href } type={ 'link' } key={ index }>{ content }</Button>;
                         })
                 }
-                {
-                    <ButtonGroup links={ iconLinks }/>
-                }
+            </ul>
+            <ul className={classNames("flex", "flex-row","lg:space-x-4", {"justify-center": direction==="row"})}>
+                { iconLinks.map(
+                    ({href, content}, index) => {
+                        return <Button key={ index }
+                                       href={ href }
+                                       type={"link"}>
+                            { content }
+                        </Button>
+                    }
+                ) }
             </ul>
         </nav>
     );
