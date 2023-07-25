@@ -4,11 +4,14 @@ import { createContext } from "react";
 
 const ThemeContext = createContext({});
 
+// TODO SSR怎么获取用户theme偏好
+const isBrowser = typeof window !== "undefined"
+
 const Theme: React.FC = (props) => {
     const {children} = props;
 
     const defaultTheme: string = useMemo(() => {
-        return localStorage.getItem('theme') || 'light';
+        return isBrowser && localStorage.getItem('theme') || 'light';
     }, []);
 
     const [ theme, setTheme ] = useState(defaultTheme);
