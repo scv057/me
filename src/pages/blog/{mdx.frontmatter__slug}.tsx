@@ -2,16 +2,17 @@ import React from "react";
 import Layout from "../../components/layout";
 import { graphql } from "gatsby";
 import Nav from "../../components/nav";
+import classNames from "classnames";
 
 const BlogPost: React.FC = ({data, children}) => {
 
-    const div = <div className={"mt-8"}>{children}</div>
+    const div = <div className={classNames("prose", "dark:prose-invert", "overflow-scroll", "md:h-screen")}>{children}</div>
 
     return (
         <Layout layout={ "lr" }
                 slots={ {
                     left: <Nav direction={ "col" }/>,
-                    right: children
+                    right: div
                 } }/>
     );
 };

@@ -8,9 +8,9 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.zhaoziji.me`,
     description: `找自己`
   },
-  flags: {
-    DEV_SSR: true
-  },
+  // flags: {
+  //   DEV_SSR: true
+  // },
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
