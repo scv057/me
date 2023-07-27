@@ -19,6 +19,12 @@ const Theme: React.FC = (props) => {
     useEffect(()=>{
         localStorage.setItem('theme', theme);
         document.querySelector(':root')?.setAttribute('data-theme', theme);
+        if (theme === 'dark'){
+            document.documentElement.classList.remove("light")
+        } else {
+            document.documentElement.classList.remove("dark")
+        }
+        document.documentElement.classList.add(theme)
     }, [theme]);
 
     return (
