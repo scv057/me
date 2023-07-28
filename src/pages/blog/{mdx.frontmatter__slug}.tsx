@@ -6,7 +6,13 @@ import classNames from "classnames";
 
 const BlogPost: React.FC = ({data, children}) => {
 
-    const div = <div className={classNames("prose", "dark:prose-invert", "overflow-scroll", "md:h-screen")}>{children}</div>
+    const div = <div
+        className={ classNames("prose", "dark:prose-invert", "overflow-scroll", "md:h-screen") }>
+        <div className={"dark:text-[#FFF] text-[#000]" }>
+            test
+        </div>
+        { children }
+    </div>;
 
     return (
         <Layout layout={ "lr" }
@@ -25,6 +31,9 @@ export const query = graphql`
         date(formatString: "MMMM D, YYYY")
       }
       body
+      fields {
+        labels
+      }
     }
   }
 `

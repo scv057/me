@@ -25,7 +25,9 @@ const Main = ({data})=>{
             <article>
               <h2>{node.frontmatter.title}</h2>
               <p>Posted: {node.frontmatter.date}</p>
-              <Label text={'css'}/>
+              {
+                node.fields.labels && node.fields.labels.map((label)=><Label text={label}/>)
+              }
             </article>
           </Link>
         ))
@@ -55,6 +57,9 @@ export const query = graphql`
           slug
         }
         id
+        fields {
+          labels
+        }
         excerpt
       }
     }

@@ -8,6 +8,12 @@ exports.onCreateNode = ({node, getNode, actions: {createNodeField}}) => {
       name: 'slug',
       value: createFilePath({node, getNode})
     });
+    // TODO: GQL query 不允许访问一些不存在的fields，临时方案
+    createNodeField({
+      node,
+      name: 'labels',
+      value: node.frontmatter.labels || ['haha']
+    })
   }
 };
 
