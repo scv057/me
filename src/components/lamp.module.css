@@ -1,19 +1,17 @@
-.lamp {
-    margin: auto;
-    /*width: 100%;*/
-    /*height: 100%;*/
-    border-radius: 2vh;
-    background: var(--lamp-color);
-    transition: box-shadow .5s ease;
+/*.lamp {*/
+/*    margin: auto;*/
+/*    border-radius: 2vh;*/
+/*    background: var(--lamp-color);*/
+/*    transition: box-shadow .5s ease;*/
 
-    position: fixed;
-    color: var(--font-color);
-    right: 4vw;
-    height: 30vh;
-    width: 0.5vw;
-    top: 35vh;
-    cursor: pointer;
-}
+/*    position: fixed;*/
+/*    color: var(--font-color);*/
+/*    right: 4vw;*/
+/*    height: 30vh;*/
+/*    width: 0.5vw;*/
+/*    top: 35vh;*/
+/*    cursor: pointer;*/
+/*}*/
 
 .shadow {
     box-shadow: 0 0 1vh .5vh rgba(var(--shine-color-rgb), 0.2),

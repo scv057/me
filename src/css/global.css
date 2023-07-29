@@ -1,3 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --boxshadow-size: 6px;
+        --boxshadow-size-2: 4px;
+        --boxshadow-size-3: 2px;
+    }
+
+    .--x-prose {
+        --font-color: black;
+        --background-color: white;
+        --shine-color: black;
+        --shine-color-rgb: 0, 0, 0;
+        --lamp-color: black;
+        --link-color: #4e1e86;
+        --primary-color: #bd93f9;
+        --secondary-color: #9547b7;
+        --background-color-1: white;
+        --background-color-2: #bd93f917;
+
+        --font-invert-color: white;
+        --background-invert-color: #0E0027;
+        --shine-invert-color: #5fb0f7;
+        --shine-invert-color-rgb: 95, 176, 247;
+        --lamp-invert-color: white;
+        --link-invert-color: #7651ff;
+        --primary-invert-color: #bd93f9;
+        --secondary-invert-color: #9547b7;
+        --background-invert-color-1: white;
+        --background-invert-color-2: #bd93f917;
+
+        background-color: var(--background-color);
+        transition: color 0.5s linear, background-color 0.2s linear ;
+    }
+
+    .--x-prose-invert {
+        --font-color: var(--font-invert-color);
+        --background-color: var(--background-invert-color);
+        --shine-color: var(--shine-invert-color);
+        --shine-color-rgb: var(--shine-invert-color-rgb);
+        --lamp-color: var(--lamp-invert-color);
+        --link-color: var(--link-invert-color);
+        --primary-color: var(--primary-invert-color);
+        --secondary-color: var(--secondary-invert-color);
+        --background-color-1: var(--background-invert-color-1);
+        --background-color-2: var(--background-invert-color-2);
+    }
+}
+
+@layer components {
+    .--x-label {
+        padding: 4px 8px;
+        margin-right: 12px;
+        font-size: .6em;
+        font-weight: 500;
+        --color: rgb(149 71 183);
+        color: var(--secondary-color, blueviolet);
+        border: 2px solid var(--secondary-color, blueviolet);
+        box-shadow: 2px 2px var(--secondary-color);
+        width: fit-content;
+    }
+
+    .--x-lamp {
+        margin: auto;
+        border-radius: 2vh;
+        background: var(--lamp-color);
+        transition: box-shadow .5s ease;
+
+        position: fixed;
+        color: var(--font-color);
+        right: 4vw;
+        height: 30vh;
+        width: 0.5vw;
+        top: 35vh;
+        cursor: pointer;
+    }
+}
+
+

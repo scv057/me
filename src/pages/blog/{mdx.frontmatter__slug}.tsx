@@ -8,9 +8,6 @@ const BlogPost: React.FC = ({data, children}) => {
 
     const div = <div
         className={ classNames("prose", "dark:prose-invert", "overflow-scroll", "md:h-screen") }>
-        <div className={"dark:text-[#FFF] text-[#000]" }>
-            test
-        </div>
         { children }
     </div>;
 
