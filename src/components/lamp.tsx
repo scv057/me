@@ -9,9 +9,6 @@ import classNames from "classnames";
 const Lamp: React.FC = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
-  const name = "100";
-  console.log(name);
-
   return (
     <div
       className={classNames(

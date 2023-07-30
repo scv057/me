@@ -14,10 +14,12 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "prettier": "npx prettier . --write",
-    "prepare": "husky install"
+    "prettier:c": "npx prettier . --check",
+    "prepare": "husky install",
+    "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.{ts,js,tsx,jsx}": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@code-hike/mdx": "^0.9.0",
