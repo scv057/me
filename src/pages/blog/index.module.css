@@ -1,12 +1,12 @@
 .blog {
-    border: 4px solid black;
-    box-shadow: 6px 6px var(--primary-color);
-    background: white;
-    margin: 16px 0 24px;
-    transition: .2s ease-in-out;
-    width: 660px;
-    position: relative;
-    padding: 16px;
-    display: block;
-    cursor: pointer;
+  border: 4px solid black;
+  box-shadow: 6px 6px var(--primary-color);
+  background: white;
+  margin: 16px 0 24px;
+  transition: 0.2s ease-in-out;
+  width: 660px;
+  position: relative;
+  padding: 16px;
+  display: block;
+  cursor: pointer;
 }

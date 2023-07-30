@@ -1,12 +1,12 @@
-import type { GatsbyConfig } from "gatsby"
+import type { GatsbyConfig } from "gatsby";
 
-const {remarkCodeHike} = require("@code-hike/mdx");
+const { remarkCodeHike } = require("@code-hike/mdx");
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `找自己`,
     siteUrl: `https://www.zhaoziji.me`,
-    description: `找自己`
+    description: `找自己`,
   },
   // flags: {
   //   DEV_SSR: true
@@ -16,29 +16,29 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-postcss",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         name: `blog`,
-        path: `${ __dirname }/blog`
-      }
+        path: `${__dirname}/blog`,
+      },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         name: `about`,
-        path: `${ __dirname }/src/pages/about`
-      }
+        path: `${__dirname}/src/pages/about`,
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [ `.mdx`, `.md` ],
+        extensions: [`.mdx`, `.md`],
         mdxOptions: {
-          remarkPlugins: [ [ remarkCodeHike, {theme: "material-palenight"} ] ],
+          remarkPlugins: [[remarkCodeHike, { theme: "material-palenight" }]],
         },
       },
     },
   ],
 };
 
-export default config
+export default config;
