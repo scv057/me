@@ -1,5 +1,6 @@
 import React from "react";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
+import naruto from "../../static/images/naruto.jpg";
 
 const SEO = ({ title, description, pathname, children }) => {
   const {
@@ -13,7 +14,7 @@ const SEO = ({ title, description, pathname, children }) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: image,
+    image: `${siteUrl}${naruto}`,
     url: `${siteUrl}${pathname || ``}`,
     twitterUsername,
   };
