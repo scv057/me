@@ -5,14 +5,11 @@ import * as styles from "./index.module.css";
 import Label from "../../components/label";
 import "@code-hike/mdx/dist/index.css";
 import Nav from "../../components/nav";
-import classNames from "classnames";
 
 const Main = ({ data }) => {
   return (
     <>
-      <div className={classNames("text-2xl", "mb-6", "mt-8")}>
-        Andrew's Blog
-      </div>
+      <div className={"mb-6 mt-8 text-2xl dark:text-white"}>Andrew's Blog</div>
       <div>
         {data.allMdx.nodes.map((node) => (
           <Link

@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../../components/layout";
-// import * as styles from './index.module.css';
 import Nav from "../../components/nav";
 import { graphql, useStaticQuery } from "gatsby";
 import classNames from "classnames";

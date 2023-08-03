@@ -48,9 +48,9 @@ module.exports = {
           },
         },
       }),
-    },
-    colors: {
-      xcolor: "var(--link-color)",
+      colors: {
+        xcolor: "var(--link-color)",
+      },
     },
   },
   corePlugins: {
