@@ -10,9 +10,9 @@ const config: GatsbyConfig = {
     image:
       "https://s1.vika.cn/space/2022/04/29/00811ddbb3684b58868ab6efc499b250",
   },
-  // flags: {
-  //   DEV_SSR: true
-  // },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",

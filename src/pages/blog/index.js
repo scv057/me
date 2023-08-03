@@ -26,7 +26,9 @@ const Main = ({ data }) => {
               <h2>{node.frontmatter.title}</h2>
               <p>Posted: {node.frontmatter.date}</p>
               {node.fields.labels &&
-                node.fields.labels.map((label) => <Label text={label} />)}
+                node.fields.labels.map((label) => (
+                  <Label key={label} text={label} />
+                ))}
             </article>
           </Link>
         ))}
