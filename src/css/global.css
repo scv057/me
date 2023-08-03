@@ -46,6 +46,12 @@
 }
 
 @layer components {
+  .--x-lamp {
+    background: var(--lamp-color);
+    transition: box-shadow 0.5s ease;
+    color: var(--font-color);
+  }
+
   .--x-label {
     padding: 4px 8px;
     margin-right: 12px;
@@ -56,20 +62,5 @@
     border: 2px solid var(--secondary-color, blueviolet);
     box-shadow: 2px 2px var(--secondary-color);
     width: fit-content;
-  }
-
-  .--x-lamp {
-    margin: auto;
-    border-radius: 2vh;
-    background: var(--lamp-color);
-    transition: box-shadow 0.5s ease;
-
-    position: fixed;
-    color: var(--font-color);
-    right: 4vw;
-    height: 30vh;
-    width: 0.5vw;
-    top: 35vh;
-    cursor: pointer;
   }
 }

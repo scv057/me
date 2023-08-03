@@ -49,6 +49,9 @@ module.exports = {
         },
       }),
     },
+    colors: {
+      xcolor: "var(--link-color)",
+    },
   },
   corePlugins: {
     // preflight: false

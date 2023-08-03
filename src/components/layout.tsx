@@ -19,7 +19,7 @@ const MidLayout: React.FC = ({ slots: { mid } }) => {
 const LRLayout: React.FC = ({ slots: { left, right } }) => {
   return (
     <div className={classNames("container", "max-auto", "px-2")}>
-      <button className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">
+      <button className="bg-sky-700 text-white hover:bg-sky-800 px-4 py-2 sm:px-8 sm:py-3">
         ...
       </button>
       <div className={classNames("flex", "flex-row", "flex-wrap", "py-4")}>
