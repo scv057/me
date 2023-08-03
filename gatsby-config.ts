@@ -5,8 +5,10 @@ const { remarkCodeHike } = require("@code-hike/mdx");
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `找自己`,
-    siteUrl: `https://www.zhaoziji.me`,
+    siteUrl: `https://www.heady.fun`,
     description: `找自己`,
+    image:
+      "https://s1.vika.cn/space/2022/04/29/00811ddbb3684b58868ab6efc499b250",
   },
   // flags: {
   //   DEV_SSR: true

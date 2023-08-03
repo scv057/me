@@ -4,7 +4,6 @@ import Layout from "../../components/layout";
 import * as styles from "./index.module.css";
 import Label from "../../components/label";
 import "@code-hike/mdx/dist/index.css";
-import Seo from "../../components/seo";
 import Nav from "../../components/nav";
 import classNames from "classnames";
 
