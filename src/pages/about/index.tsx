@@ -4,41 +4,46 @@ import Layout from "../../components/layout";
 import Nav from "../../components/nav";
 import { graphql, useStaticQuery } from "gatsby";
 
-const contents: Array<string | JSX.Element> = ['🀄️ My name is 谢杨浩', <>我在<a href={'http://www.baidu.com'}>等你</a></>];
+const contents: Array<string | JSX.Element> = [
+  "🀄️ My name is 谢杨浩",
+  <>
+    我在<a href={"http://www.baidu.com"}>等你</a>
+  </>,
+];
 
-const Content:React.FC = () => {
-    const data = useStaticQuery(
-        graphql`query MyQuery {
-                  mdx(id: {eq: "45fdd8f0-7cc6-5327-8751-f11dbfbd836d"}) {
-                    frontmatter {
-                      author
-                      title
-                      date(formatString: "MMMM D, YYYY")
-                    }
-                    body
-                  }
-                }`);
+const Content: React.FC = () => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      mdx(id: { eq: "45fdd8f0-7cc6-5327-8751-f11dbfbd836d" }) {
+        frontmatter {
+          author
+          title
+          date(formatString: "MMMM D, YYYY")
+        }
+        body
+      }
+    }
+  `);
 
-    return <article>
-        <h1>{data?.mdx?.frontmatter?.title}</h1>
-        <ol>
-            {
-                contents.map((content, index) => {
-                    return <li key={ index }>{ content }</li>;
-                })
-            }
-        </ol>
+  return (
+    <article>
+      <h1>{data?.mdx?.frontmatter?.title}</h1>
+      <ol>
+        {contents.map((content, index) => {
+          return <li key={index}>{content}</li>;
+        })}
+      </ol>
     </article>
+  );
 };
 
-
 const AboutPage = () => {
-
-    return (
-        <Layout layout={ "lr" }
-                slots={ {left: <Nav direction={"col"}/>,
-                    right: <Content/>} }/>
-    );
+  return (
+    <Layout
+      layout={"lr"}
+      slots={{ left: <Nav direction={"col"} />, right: <Content /> }}
+    />
+  );
 };
 
 export default AboutPage;

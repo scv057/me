@@ -8,11 +8,9 @@ slug: "my-first-post"
 
 ## Head2
 
-head alternate
-==
+# head alternate
 
-head2 alternate
---
+## head2 alternate
 
 ### paragraphs
 
@@ -24,7 +22,7 @@ next line
 
 It's **bold** text
 
-It's *italic* text
+It's _italic_ text
 
 _**bold and italic**_
 
@@ -36,9 +34,9 @@ _**bold and italic**_
 >
 > next line
 
-
 > quote
-> >quote in quote
+>
+> > quote in quote
 
 - item1
 - item2
@@ -48,25 +46,23 @@ _**bold and italic**_
 1. ordered 2
 2. 1 with ordered
 
-1. Open the file.
-2. Find the following code block on line 21:
+3. Open the file.
+4. Find the following code block on line 21:
 
 ```html
 <html lang="ZH">
-   <head>
-     <title>Test</title>
-   </head>
+  <head>
+    <title>Test</title>
+  </head>
 </html>
 ```
 
 3. Update the title to match the name of your website.
 
-
 [heady.fun](https://heady.fun "title")
 
 image link seems not work well
 ![avatar](https://s1.vika.cn/space/2022/05/05/2c7a8d84127b49ab870d110a958dc9bb?attname=images.jpeg)
-
 
 <a href="https://heady.fun">heady</a>
 
@@ -76,13 +72,11 @@ At the command prompt, type `nano`.
 
 code seems not work well
 
+break line **\_\_\_**,**---**,**\*\*** both OK
 
-break line **___**,**---**,**\*\*** both OK
-
-___
+---
 
 break line
-
 
 ### references
 
@@ -90,15 +84,10 @@ this is [Heady][label name]!!
 
 [label name]: http://www.heady.fun
 
-
 <main>
-  <article>
-    # Hello!
-  </article>
+  <article># Hello!</article>
 </main>
 
 <div># this is not a heading but *this* is emphasis</div>
 
-<div>
-  This is a `p`.
-</div>
+<div>This is a `p`.</div>

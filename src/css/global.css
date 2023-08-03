@@ -1,3 +1,66 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --boxshadow-size: 6px;
+    --boxshadow-size-2: 4px;
+    --boxshadow-size-3: 2px;
+  }
+
+  .light {
+    --font-color: black;
+    --background-color: white;
+    --shine-color: black;
+    --shine-color-rgb: 0, 0, 0;
+    --lamp-color: black;
+    --link-color: #4e1e86;
+    --primary-color: #bd93f9;
+    --secondary-color: #9547b7;
+    --background-color-1: white;
+    --background-color-2: #bd93f917;
+
+    background-color: var(--background-color);
+    transition:
+      color 0.5s linear,
+      background-color 0.2s linear;
+  }
+
+  .dark {
+    --font-color: white;
+    --background-color: #0e0027;
+    --shine-color: #5fb0f7;
+    --shine-color-rgb: 95, 176, 247;
+    --lamp-color: white;
+    --link-color: #7651ff;
+    --primary-color: #bd93f9;
+    --secondary-color: #9547b7;
+    --background-color-1: white;
+    --background-color-2: #bd93f917;
+    background-color: var(--background-color);
+    transition:
+      color 0.5s linear,
+      background-color 0.2s linear;
+  }
+}
+
+@layer components {
+  .--x-lamp {
+    background: var(--lamp-color);
+    transition: box-shadow 0.5s ease;
+    color: var(--font-color);
+  }
+
+  .--x-label {
+    padding: 4px 8px;
+    margin-right: 12px;
+    font-size: 0.6em;
+    font-weight: 500;
+    --color: rgb(149 71 183);
+    color: var(--secondary-color, blueviolet);
+    border: 2px solid var(--secondary-color, blueviolet);
+    box-shadow: 2px 2px var(--secondary-color);
+    width: fit-content;
+  }
+}
