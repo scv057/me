@@ -2,13 +2,18 @@ import type { GatsbyConfig } from "gatsby";
 
 const { remarkCodeHike } = require("@code-hike/mdx");
 
+let siteUrl = "https://www.heady.fun";
+
+if (process.env.NODE_ENV === "dev") {
+  siteUrl = "http://localhost:8000";
+}
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `找自己`,
-    siteUrl: `https://www.heady.fun`,
+    siteUrl: siteUrl,
     description: `找自己`,
-    image:
-      "https://s1.vika.cn/space/2022/04/29/00811ddbb3684b58868ab6efc499b250",
+    image: `${siteUrl}`,
   },
   flags: {
     DEV_SSR: true,
