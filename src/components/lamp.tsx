@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import * as styles from "./lamp.module.css";
 import { ThemeContext } from "./theme";
 import classNames from "classnames";
 
@@ -21,7 +20,7 @@ const Lamp: React.FC = () => {
         "w-[0.5vw]",
         "rounded-[2vh]",
         "cursor-pointer",
-        theme === "dark" && styles.shadow,
+        "dark:--x-shadow",
       )}
       onClick={() => {
         setTheme(theme === "light" ? "dark" : "light");
