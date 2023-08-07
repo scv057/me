@@ -43,13 +43,13 @@ const Nav: React.FC<IHeaderProps> = (props) => {
         })}
       </ul>
       <ul
-        className={classNames("flex", "flex-row", "lg:space-x-4", {
+        className={classNames("flex", "flex-row", "lg:space-x-4", "mt-8", {
           "justify-center": direction === "row",
         })}
       >
         {iconLinks.map(({ href, content }, index) => {
           return (
-            <Button key={index} href={href} type={"link"}>
+            <Button key={index} href={href} type={"a"}>
               {content}
             </Button>
           );

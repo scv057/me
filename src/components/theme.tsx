@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import "../css/var.css";
 import { createContext } from "react";
 
 const ThemeContext = createContext({});

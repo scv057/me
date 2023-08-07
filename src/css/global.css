@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    --boxshadow-size-4: 8px;
     --boxshadow-size: 6px;
     --boxshadow-size-2: 4px;
     --boxshadow-size-3: 2px;
@@ -60,7 +61,7 @@
     --color: rgb(149 71 183);
     color: var(--secondary-color, blueviolet);
     border: 2px solid var(--secondary-color, blueviolet);
-    box-shadow: 2px 2px var(--secondary-color);
+    /*box-shadow: 2px 2px var(--secondary-color);*/
     width: fit-content;
   }
 

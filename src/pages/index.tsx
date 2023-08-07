@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
 import * as styles from "./index.module.css";
-import "../css/main.css";
 import { StaticImage } from "gatsby-plugin-image";
 import Nav from "../components/nav";
 import classNames from "classnames";

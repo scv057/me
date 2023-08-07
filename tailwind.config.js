@@ -53,9 +53,6 @@ module.exports = {
       },
     },
   },
-  corePlugins: {
-    // preflight: false
-  },
   // tailwind has removed some default style see @link https://tailwindcss.com/docs/preflight
   // using typography plugin to fixit @link https://tailwindcss.com/docs/typography-plugin
   plugins: [
@@ -63,6 +60,26 @@ module.exports = {
     plugin(function ({ addVariant }) {
       addVariant("hocus", ["&:hover", "&:focus"]);
       addVariant("light", [".light &"]);
+    }),
+    plugin(function ({ matchUtilities }) {
+      matchUtilities({
+        "half-shadow": (value) => {
+          const [left, right] = value.split("-");
+          return {
+            "box-shadow": `${left} ${right} var(--primary-color)`,
+            // 'box-shadow': `${value} ${value} var(--primary-color)`
+          };
+        },
+      });
+    }),
+    plugin(function ({ addVariant, e }) {
+      addVariant("customUtilities", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(
+            `customUtilities${separator}${className}`,
+          )}[style*="--custom-font-size"]`;
+        });
+      });
     }),
   ],
 };
