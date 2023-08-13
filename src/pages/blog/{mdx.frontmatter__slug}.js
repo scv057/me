@@ -3,23 +3,20 @@ import Layout from "../../components/layout";
 import { graphql } from "gatsby";
 import Nav from "../../components/nav";
 import classNames from "classnames";
-
-const BlogPost: React.FC = ({ data, children }) => {
-  const div = (
-    <div className={classNames("prose", "dark:prose-invert")}>{children}</div>
+const BlogPost = ({ data, children }) => {
+  const div = React.createElement(
+    "div",
+    { className: classNames("prose", "dark:prose-invert") },
+    children,
   );
-
-  return (
-    <Layout
-      layout={"lr"}
-      slots={{
-        left: <Nav direction={"col"} />,
-        right: div,
-      }}
-    />
-  );
+  return React.createElement(Layout, {
+    layout: "lr",
+    slots: {
+      left: React.createElement(Nav, { direction: "col" }),
+      right: div,
+    },
+  });
 };
-
 export const query = graphql`
   query ($id: String) {
     mdx(id: { eq: $id }) {
@@ -34,5 +31,4 @@ export const query = graphql`
     }
   }
 `;
-
 export default BlogPost;

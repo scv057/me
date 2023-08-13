@@ -4,44 +4,21 @@
 
 @layer base {
   :root {
+    --boxshadow-size-4: 8px;
     --boxshadow-size: 6px;
     --boxshadow-size-2: 4px;
     --boxshadow-size-3: 2px;
-  }
-
-  .light {
-    --font-color: black;
-    --background-color: white;
-    --shine-color: black;
-    --shine-color-rgb: 0, 0, 0;
-    --lamp-color: black;
-    --link-color: #4e1e86;
-    --primary-color: #bd93f9;
-    --secondary-color: #9547b7;
-    --background-color-1: white;
-    --background-color-2: #bd93f917;
-
-    background-color: var(--background-color);
     transition:
-      color 0.5s linear,
-      background-color 0.2s linear;
+          color 0.5s linear,
+          background-color 0.2s linear;
+  }
+  /*todo: autocompleting won't work if gen configuration dynamically */
+  .light {
+    background-color: var(--background-color);
   }
 
   .dark {
-    --font-color: white;
-    --background-color: #0e0027;
-    --shine-color: #5fb0f7;
-    --shine-color-rgb: 95, 176, 247;
-    --lamp-color: white;
-    --link-color: #7651ff;
-    --primary-color: #bd93f9;
-    --secondary-color: #9547b7;
-    --background-color-1: white;
-    --background-color-2: #bd93f917;
     background-color: var(--background-color);
-    transition:
-      color 0.5s linear,
-      background-color 0.2s linear;
   }
 }
 
@@ -60,7 +37,19 @@
     --color: rgb(149 71 183);
     color: var(--secondary-color, blueviolet);
     border: 2px solid var(--secondary-color, blueviolet);
-    box-shadow: 2px 2px var(--secondary-color);
+    /*box-shadow: 2px 2px var(--secondary-color);*/
     width: fit-content;
+  }
+
+  .--x-shadow {
+    box-shadow:
+            0 0 1vh 0.5vh rgba(var(--shine-color-rgb), 0.2),
+            0 0 2vh 1vh rgba(var(--shine-color-rgb), 0.2),
+            0 0 5vh 1vh rgba(var(--shine-color-rgb), 0.1),
+            0 0 10vh 1vh rgba(var(--shine-color-rgb), 0.05),
+            0 0 15vh 1vh var(--shine-color),
+            0 0 20vh 1vh var(--shine-color),
+            0 0 25vh 1vh var(--shine-color),
+            0 0 50vh 1vh var(--shine-color);
   }
 }

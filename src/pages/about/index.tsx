@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "../../components/layout";
-// import * as styles from './index.module.css';
 import Nav from "../../components/nav";
 import { graphql, useStaticQuery } from "gatsby";
+import classNames from "classnames";
 
 const contents: Array<string | JSX.Element> = [
   "🀄️ My name is 谢杨浩",
@@ -26,7 +26,7 @@ const Content: React.FC = () => {
   `);
 
   return (
-    <article>
+    <article className={classNames("prose", "dark:prose-invert")}>
       <h1>{data?.mdx?.frontmatter?.title}</h1>
       <ol>
         {contents.map((content, index) => {
