@@ -8,7 +8,7 @@ interface ILabelProps {
 const Label: React.FC<ILabelProps> = ({ text }) => {
   return (
     <div
-      className={classNames("half-shadow-[2px-2px]", "--x-label", "primary/30")}
+      className={classNames("half-shadow-[2px_2px]", "--x-label", "primary/30")}
       key={text}
     >
       {text}

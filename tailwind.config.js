@@ -1,5 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
+import {
+  genThemeExtend,
+  genCssVariable,
+} from "@andrew_xie/tailwind-dark-theme";
+
+const tokens = {
+  "light-font-color": "black",
+  "light-background-color": "white",
+  "light-shine-color": "black",
+  "light-shine-color-rgb": "0, 0, 0",
+  "light-lamp-color": "black",
+  "light-link-color": "#4e1e86",
+  "light-primary-color": "#bd93f9",
+  "light-secondary-color": "#9547b7",
+  "light-background-color-1": "white",
+  "light-background-color-2": "#bd93f917",
+  "dark-font-color": "white",
+  "dark-background-color": "#0e0027",
+  "dark-shine-color": "#5fb0f7",
+  "dark-shine-color-rgb": "95, 176, 247",
+  "dark-lamp-color": "white",
+  "dark-link-color": "#7651ff",
+  "dark-primary-color": "#bd93f9",
+  "dark-secondary-color": "#9547b7",
+  "dark-background-color-1": "white",
+  "dark-background-color-2": "#bd93f917",
+};
+const cssVariable = genCssVariable(tokens);
+const themeExtend = genThemeExtend(tokens);
 
 module.exports = {
   darkMode: "class",
@@ -7,7 +36,6 @@ module.exports = {
     "./src/pages/**/*.{js,jsx,ts,tsx}",
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
-  // purge: ["./src/**/**/*.mdx", "./blog/*.mdx"],
   theme: {
     extend: {
       typography: ({ theme }) => ({
@@ -48,37 +76,28 @@ module.exports = {
           },
         },
       }),
-      colors: {
-        xcolor: "var(--link-color)",
-      },
     },
   },
   // tailwind has removed some default style see @link https://tailwindcss.com/docs/preflight
-  // using typography plugin to fixit @link https://tailwindcss.com/docs/typography-plugin
+  // using typography plugin to fix it @link
+  // https://tailwindcss.com/docs/typography-plugin
   plugins: [
     require("@tailwindcss/typography"),
     plugin(function ({ addVariant }) {
       addVariant("hocus", ["&:hover", "&:focus"]);
-      addVariant("light", [".light &"]);
     }),
+    plugin(function ({ addUtilities }) {
+      addUtilities(cssVariable);
+    }, themeExtend),
     plugin(function ({ matchUtilities }) {
       matchUtilities({
+        // use predetermined delimiter in arbitrary values then split the
+        // value to receive 2 or more values
         "half-shadow": (value) => {
-          const [left, right] = value.split("-");
           return {
-            "box-shadow": `${left} ${right} var(--primary-color)`,
-            // 'box-shadow': `${value} ${value} var(--primary-color)`
+            "box-shadow": `${value} var(--primary-color)`,
           };
         },
-      });
-    }),
-    plugin(function ({ addVariant, e }) {
-      addVariant("customUtilities", ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          return `.${e(
-            `customUtilities${separator}${className}`,
-          )}[style*="--custom-font-size"]`;
-        });
       });
     }),
   ],

@@ -30,7 +30,7 @@ const Main = ({ data }) => {
               "border-solid",
               "border-4",
               "border-black",
-              "half-shadow-[6px-6px]",
+              "half-shadow-[6px_6px]",
               "cursor-pointer",
               "w-[660px]",
             )}

@@ -39,7 +39,7 @@ const Content = () => {
           styles.intro,
         )}
       >
-        Frontend Developer who is unemployed{" "}
+        Frontend Developer
       </p>
       <Nav />
     </div>
