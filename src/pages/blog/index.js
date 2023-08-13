@@ -11,7 +11,6 @@ const Main = ({ data }) => {
   return (
     <>
       <div className={"mb-6 mt-8 text-2xl dark:text-white"}>Andrew's Blog</div>
-      {/*<Cover title={"Hello World"} desc={"ahahhaha"} />*/}
       <div>
         {data.allMdx.nodes.map((node) => (
           <Link
@@ -32,7 +31,8 @@ const Main = ({ data }) => {
               "border-black",
               "half-shadow-[6px_6px]",
               "cursor-pointer",
-              "w-[660px]",
+              "w-[95%]",
+              "max-w-[660px]",
             )}
             key={node.id}
           >

@@ -17,9 +17,9 @@ const textLinks: Array<ILinkProps> = [
   { content: "Index", href: "/" },
   { content: "About", href: "/about" },
   { content: "Writings", href: "/blog" },
-  { content: "Talks", href: "/talk" },
+  // { content: "Talks", href: "/talk" },
   { content: "Notes", href: "/note" },
-  { content: "Newsletter", href: "/newsletter" },
+  // { content: "Newsletter", href: "/newsletter" },
 ];
 
 const iconLinks = [
@@ -33,7 +33,15 @@ const Nav: React.FC<IHeaderProps> = (props) => {
 
   return (
     <nav className={classNames("flex", "flex-col")}>
-      <ul className={classNames("flex", `flex-${direction}`, "justify-evenly")}>
+      <ul
+        className={classNames(
+          "flex",
+          `flex-${direction}`,
+          "gap-2",
+          "lg:gap-12",
+          "justify-center",
+        )}
+      >
         {textLinks.map(({ href, content }, index) => {
           return (
             <Button href={href} type={"link"} key={index}>
@@ -43,7 +51,7 @@ const Nav: React.FC<IHeaderProps> = (props) => {
         })}
       </ul>
       <ul
-        className={classNames("flex", "flex-row", "lg:space-x-4", "mt-8", {
+        className={classNames("flex", "flex-row", "lg:space-x-4", {
           "justify-center": direction === "row",
         })}
       >
