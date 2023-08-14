@@ -18,14 +18,6 @@ const Lamp: React.FC = () => {
           // "sm:visible",
           // "invisible",
           "--x-lamp",
-          "fixed",
-          "z-10",
-          "top-1/3",
-          "right-[4vw]",
-          "h-1/3",
-          "w-[0.5vw]",
-          "rounded-[2vh]",
-          "cursor-pointer",
           "dark:--x-shadow",
         )}
         onClick={clickHandler}

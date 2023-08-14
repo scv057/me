@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./button";
 import Icons from "../icons/icons";
 import classNames from "classnames";
@@ -31,14 +31,33 @@ const iconLinks = [
 const Nav: React.FC<IHeaderProps> = (props) => {
   const { direction = "row" } = props;
 
+  const [display, setDisplay] = useState("hidden");
+
+  const toggle = function () {
+    setDisplay(display === "hidden" ? "flex" : "hidden");
+  };
+
   return (
     <nav className={classNames("flex", "flex-col")}>
+      <button
+        className={classNames(
+          "text-white",
+          "block",
+          { hidden: direction === "row" },
+          "sm:hidden",
+        )}
+        onClick={toggle}
+      >
+        Menu
+      </button>
       <ul
         className={classNames(
           "flex",
+          "sm:flex",
           `flex-${direction}`,
           "gap-2",
-          "lg:gap-12",
+          { [`${display}`]: direction === "col" },
+          { "lg:gap-12": direction === "row" },
           "justify-center",
         )}
       >
@@ -51,9 +70,16 @@ const Nav: React.FC<IHeaderProps> = (props) => {
         })}
       </ul>
       <ul
-        className={classNames("flex", "flex-row", "lg:space-x-4", {
-          "justify-center": direction === "row",
-        })}
+        className={classNames(
+          "flex-row",
+          "flex",
+          "sm:flex",
+          { [`${display}`]: direction === "col" },
+          "lg:space-x-4",
+          {
+            "justify-center": direction === "row",
+          },
+        )}
       >
         {iconLinks.map(({ href, content }, index) => {
           return (
