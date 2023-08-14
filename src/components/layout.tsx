@@ -18,7 +18,7 @@ const MidLayout: React.FC = ({ slots: { mid } }) => {
 
 const LRLayout: React.FC = ({ slots: { left, right } }) => {
   return (
-    <div className={classNames("flex", "flex-row", "flex-wrap", "py-4")}>
+    <div className={classNames("flex", "flex-row", "flex-wrap", "p-2")}>
       <aside className={classNames("w-full", "sm:w-1/3", "md:w-1/4", "px-2")}>
         <div className="sticky top-0 w-full p-4">{left}</div>
       </aside>
