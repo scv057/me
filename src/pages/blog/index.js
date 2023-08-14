@@ -5,7 +5,6 @@ import Label from "../../components/label";
 import "@code-hike/mdx/dist/index.css";
 import Nav from "../../components/nav";
 import classNames from "classnames";
-// import Cover from '../../components/cover';
 
 const Main = ({ data }) => {
   return (
@@ -37,8 +36,13 @@ const Main = ({ data }) => {
             key={node.id}
           >
             <article>
-              <h2>{node.frontmatter.title}</h2>
-              <p>Posted: {node.frontmatter.date}</p>
+              <h3 className={classNames("font-semibold", "text-2xl", "mb-1")}>
+                {node.frontmatter.title}
+              </h3>
+              <p className={classNames("mb-1")}>
+                Posted: {node.frontmatter.date}
+              </p>
+              {node.frontmatter.describe && <p>{node.frontmatter.describe}</p>}
               {node.fields.labels &&
                 node.fields.labels.map((label) => (
                   <Label key={label} text={label} />
@@ -84,7 +88,5 @@ export const query = graphql`
     }
   }
 `;
-
-// export const Head = () => <Seo/>;
 
 export default Blog;
