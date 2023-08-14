@@ -14,6 +14,7 @@ const config: GatsbyConfig = {
     siteUrl: siteUrl,
     description: `找自己`,
     image: `${siteUrl}`,
+    twitterUsername: "scv001",
   },
   flags: {
     DEV_SSR: true,
@@ -27,13 +28,6 @@ const config: GatsbyConfig = {
       options: {
         name: `blog`,
         path: `${__dirname}/blog`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `about`,
-        path: `${__dirname}/src/pages/about`,
       },
     },
     {

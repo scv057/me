@@ -1,6 +1,7 @@
 import React from "react";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import naruto from "../../static/images/naruto.jpg";
+import yellowCat from "../../static/images/yellow-cat-128.png";
 
 const SEO = ({ title, description, pathname, children }) => {
   const {
@@ -33,10 +34,7 @@ const SEO = ({ title, description, pathname, children }) => {
       <meta name="og:type" content="website" />
       <meta name="og:url" content={seo.url} />
       <meta name="og:image" content={seo.image} />
-      <link
-        rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
-      />
+      <link rel="icon" href={yellowCat} />
       {children}
     </>
   );

@@ -12,7 +12,12 @@ exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
     createNodeField({
       node,
       name: "labels",
-      value: node.frontmatter.labels || ["haha"],
+      value: node.frontmatter.labels || [],
+    });
+    createNodeField({
+      node,
+      name: "describe",
+      value: node.frontmatter.describe || "",
     });
   }
 };
