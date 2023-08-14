@@ -14,6 +14,7 @@ const config: GatsbyConfig = {
     siteUrl: siteUrl,
     description: `找自己`,
     image: `${siteUrl}`,
+    twitterUsername: "scv001",
   },
   flags: {
     DEV_SSR: true,

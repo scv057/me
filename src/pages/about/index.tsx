@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import Nav from "../../components/nav";
 import classNames from "classnames";
+import SEO from "../../components/seo";
 
 const Content: React.FC = () => {
   return (
@@ -36,3 +37,7 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
+export const Head = () => {
+  return <SEO title={"about me"} />;
+};

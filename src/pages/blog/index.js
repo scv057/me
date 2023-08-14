@@ -5,6 +5,7 @@ import Label from "../../components/label";
 import "@code-hike/mdx/dist/index.css";
 import Nav from "../../components/nav";
 import classNames from "classnames";
+import SEO from "../../components/seo";
 
 const Main = ({ data }) => {
   return (
@@ -90,3 +91,7 @@ export const query = graphql`
 `;
 
 export default Blog;
+
+export const Head = () => {
+  return <SEO title={"blogs"} />;
+};
