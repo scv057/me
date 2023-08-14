@@ -70,10 +70,7 @@ const Blog = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(
-      sort: { fields: frontmatter___date, order: DESC }
-      filter: { id: { ne: "45fdd8f0-7cc6-5327-8751-f11dbfbd836d" } }
-    ) {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
