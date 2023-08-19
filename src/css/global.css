@@ -11,7 +11,15 @@
     transition:
           color 0.5s linear,
           background-color 0.2s linear;
+
+      --background-color: 1;
+      --lamp-color: 1;
+      --font-color: 1;
+      --shine-color-rgb: 1;
+      --secondary-color: 1;
+      --shine-color: 1;
   }
+
   /*todo: autocompleting won't work if gen configuration dynamically */
   .light {
     background-color: var(--background-color);

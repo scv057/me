@@ -3,7 +3,7 @@ import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import naruto from "../../static/images/naruto.jpg";
 import yellowCat from "../../static/images/yellow-cat-128.png";
 
-const SEO = ({ title, description, pathname, children }) => {
+const Seo = ({ title, description, pathname, children }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -40,4 +40,4 @@ const SEO = ({ title, description, pathname, children }) => {
   );
 };
 
-export default SEO;
+export default Seo;

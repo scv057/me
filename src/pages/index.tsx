@@ -4,7 +4,7 @@ import * as styles from "./index.module.css";
 import { StaticImage } from "gatsby-plugin-image";
 import Nav from "../components/nav";
 import classNames from "classnames";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const url =
   "https://s1.vika.cn/space/2022/05/05/2c7a8d84127b49ab870d110a958dc9bb?attname=images.jpeg";
@@ -57,5 +57,5 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => {
-  return <SEO />;
+  return <Seo />;
 };
