@@ -18,7 +18,8 @@ const textLinks: Array<ILinkProps> = [
   { content: "About", href: "/about" },
   { content: "Writings", href: "/blog" },
   // { content: "Talks", href: "/talk" },
-  { content: "Notes", href: "/note" },
+  { content: "Tags", href: "/tags" },
+  // { content: "Notes", href: "/note" },
   // { content: "Newsletter", href: "/newsletter" },
 ];
 

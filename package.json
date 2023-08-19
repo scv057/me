@@ -32,6 +32,8 @@
     "gatsby-plugin-mdx": "^5.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-source-filesystem": "^5.11.0",
+    "loadsh": "^0.0.4",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
