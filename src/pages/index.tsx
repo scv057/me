@@ -25,7 +25,15 @@ const Content = () => {
         alt="avatar"
       />
       <p
-        className={classNames("text-4xl", "text-center", "mt-8", styles.title)}
+        className={classNames(
+          "text-4xl",
+          "text-center",
+          "mt-8",
+          "text-[--font-color]",
+          "transition-colors",
+          "duration-500",
+          "ease-linear",
+        )}
       >
         {" "}
         Andrew Xie{" "}
@@ -36,7 +44,10 @@ const Content = () => {
           "text-center",
           "mt-8",
           "mb-8",
-          styles.intro,
+          "text-[--font-color]",
+          "transition-colors",
+          "duration-500",
+          "ease-linear",
         )}
       >
         Frontend Developer

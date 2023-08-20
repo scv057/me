@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import PropTypes from "prop-types";
 import Seo from "../../components/seo";
 import classNames from "classnames";
 import Label from "../../components/label";
@@ -9,7 +8,6 @@ import Nav from "../../components/nav";
 
 const Main = ({ data }) => {
   const { nodes } = data.allMdx;
-  console.log(nodes);
   return (
     <>
       <div className={"mb-6 mt-8 text-2xl dark:text-white"}>labels</div>

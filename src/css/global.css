@@ -61,4 +61,33 @@
             0 0 25vh 1vh var(--shine-color),
             0 0 50vh 1vh var(--shine-color);
   }
+
+  .size-lg-btn {
+    @apply mr-[0.6rem]
+    mb-[1.2rem]
+    px-2
+    py-1
+    border-[4px]
+    border-solid
+    border-[--link-color]
+    duration-100
+    ease-linear
+    font-medium
+    cursor-pointer
+    no-underline
+    inline-block;
+    color: var(--link-color);
+    fill: var(--link-color);
+}
+  .shadow-thin {
+    box-shadow: var(--boxshadow-size-2) var(--boxshadow-size-2);
+  }
+
+  .shadow-bold {
+    box-shadow: var(--boxshadow-size-4) var(--boxshadow-size-4);
+  }
+
+  .translate-xy-2 {
+    transform: translate(-2px, -2px)
+  }
 }

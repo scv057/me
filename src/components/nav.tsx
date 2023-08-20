@@ -64,7 +64,17 @@ const Nav: React.FC<IHeaderProps> = (props) => {
       >
         {textLinks.map(({ href, content }, index) => {
           return (
-            <Button href={href} type={"link"} key={index}>
+            <Button
+              className={classNames(
+                "size-lg-btn",
+                "shadow-thin",
+                "hover:shadow-bold",
+                "hover:translate-xy-2",
+              )}
+              href={href}
+              type={"link"}
+              key={index}
+            >
               {content}
             </Button>
           );
@@ -84,7 +94,17 @@ const Nav: React.FC<IHeaderProps> = (props) => {
       >
         {iconLinks.map(({ href, content }, index) => {
           return (
-            <Button key={index} href={href} type={"a"}>
+            <Button
+              className={classNames(
+                "size-lg-btn",
+                "shadow-thin",
+                "hover:shadow-bold",
+                "hover:translate-xy-2",
+              )}
+              href={href}
+              type={"a"}
+              key={index}
+            >
               {content}
             </Button>
           );

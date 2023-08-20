@@ -1,7 +1,5 @@
 import React from "react";
-import * as styles from "./button.module.css";
 import { Link } from "gatsby";
-import classNames from "classnames";
 
 interface Interface {
   href: string;
@@ -9,29 +7,11 @@ interface Interface {
 }
 
 const LinkButton: React.FC<Interface> = (props) => {
-  const { href, children } = props;
+  const { href, children, className } = props;
 
   return (
     <li>
-      <Link
-        className={classNames(
-          "mr-[0.6rem]",
-          "mb-[1.2rem]",
-          "px-2",
-          "py-1",
-          "border-[4px]",
-          "border-solid",
-          "border-[--link-color]",
-          "duration-100",
-          "ease-linear",
-          "font-medium",
-          "cursor-pointer",
-          "no-underline",
-          "inline-block",
-          styles.link,
-        )}
-        to={href}
-      >
+      <Link className={className} to={href}>
         {children}
       </Link>
     </li>
@@ -39,29 +19,11 @@ const LinkButton: React.FC<Interface> = (props) => {
 };
 
 const AButton: React.FC<Interface> = (props) => {
-  const { href, children } = props;
+  const { href, children, className } = props;
 
   return (
     <li>
-      <a
-        className={classNames(
-          "mr-[0.6rem]",
-          "mb-[1.2rem]",
-          "px-2",
-          "py-1",
-          "border-[4px]",
-          "border-solid",
-          "border-[--link-color]",
-          "duration-100",
-          "ease-linear",
-          "font-medium",
-          "cursor-pointer",
-          "no-underline",
-          "inline-block",
-          styles.link,
-        )}
-        href={href}
-      >
+      <a className={className} href={href}>
         {children}
       </a>
     </li>
