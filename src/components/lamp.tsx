@@ -18,7 +18,7 @@ const Lamp: React.FC = () => {
           // "sm:visible",
           // "invisible",
           "--x-lamp",
-          "dark:--x-shadow",
+          "dark:--x-shadow-lamp",
         )}
         onClick={clickHandler}
       />

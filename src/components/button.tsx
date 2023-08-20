@@ -10,11 +10,9 @@ const LinkButton: React.FC<Interface> = (props) => {
   const { href, children, className } = props;
 
   return (
-    <li>
-      <Link className={className} to={href}>
-        {children}
-      </Link>
-    </li>
+    <Link className={className} to={href}>
+      {children}
+    </Link>
   );
 };
 
@@ -22,11 +20,9 @@ const AButton: React.FC<Interface> = (props) => {
   const { href, children, className } = props;
 
   return (
-    <li>
-      <a className={className} href={href}>
-        {children}
-      </a>
-    </li>
+    <a className={className} href={href}>
+      {children}
+    </a>
   );
 };
 

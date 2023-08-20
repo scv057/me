@@ -67,8 +67,8 @@ const Nav: React.FC<IHeaderProps> = (props) => {
             <Button
               className={classNames(
                 "size-lg-btn",
-                "shadow-thin",
-                "hover:shadow-bold",
+                "--x-shadow-md",
+                "hover:--x-shadow-bold",
                 "hover:translate-xy-2",
               )}
               href={href}
@@ -97,8 +97,8 @@ const Nav: React.FC<IHeaderProps> = (props) => {
             <Button
               className={classNames(
                 "size-lg-btn",
-                "shadow-thin",
-                "hover:shadow-bold",
+                "--x-shadow-md",
+                "hover:--x-shadow-bold",
                 "hover:translate-xy-2",
               )}
               href={href}

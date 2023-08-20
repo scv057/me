@@ -3,16 +3,24 @@ import Layout from "../../components/layout";
 import { graphql } from "gatsby";
 import Seo from "../../components/seo";
 import Nav from "../../components/nav";
-import Label from "../../components/label";
+import Button from "../../components/button";
 
 const Main = ({ data }) => {
   const { group } = data.allMdx;
-  console.log(group);
 
   return (
     <div>
       {group.map((label) => {
-        return <Label key={label.name} text={label.name} />;
+        return (
+          <Button
+            className={"--x-label"}
+            key={label.name}
+            href={""}
+            type={"link"}
+          >
+            {label.name}
+          </Button>
+        );
       })}
     </div>
   );

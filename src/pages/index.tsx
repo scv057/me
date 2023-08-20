@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/layout";
-import * as styles from "./index.module.css";
 import { StaticImage } from "gatsby-plugin-image";
 import Nav from "../components/nav";
 import classNames from "classnames";
@@ -16,10 +15,11 @@ const Content = () => {
     >
       <StaticImage
         className={classNames(
-          styles.avatar,
+          "rect-border",
           "aspect-square",
           "mb-10",
           "mx-auto",
+          "w-[200px]",
         )}
         src={url}
         alt="avatar"
