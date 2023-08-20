@@ -1,10 +1,9 @@
 import React from "react";
 import Layout from "../components/layout";
-import * as styles from "./index.module.css";
 import { StaticImage } from "gatsby-plugin-image";
 import Nav from "../components/nav";
 import classNames from "classnames";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 const url =
   "https://s1.vika.cn/space/2022/05/05/2c7a8d84127b49ab870d110a958dc9bb?attname=images.jpeg";
@@ -16,16 +15,25 @@ const Content = () => {
     >
       <StaticImage
         className={classNames(
-          styles.avatar,
+          "rect-border",
           "aspect-square",
           "mb-10",
           "mx-auto",
+          "w-[200px]",
         )}
         src={url}
         alt="avatar"
       />
       <p
-        className={classNames("text-4xl", "text-center", "mt-8", styles.title)}
+        className={classNames(
+          "text-4xl",
+          "text-center",
+          "mt-8",
+          "text-[--font-color]",
+          "transition-colors",
+          "duration-500",
+          "ease-linear",
+        )}
       >
         {" "}
         Andrew Xie{" "}
@@ -36,7 +44,10 @@ const Content = () => {
           "text-center",
           "mt-8",
           "mb-8",
-          styles.intro,
+          "text-[--font-color]",
+          "transition-colors",
+          "duration-500",
+          "ease-linear",
         )}
       >
         Frontend Developer
@@ -57,5 +68,5 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => {
-  return <SEO />;
+  return <Seo />;
 };

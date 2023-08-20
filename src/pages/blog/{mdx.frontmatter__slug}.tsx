@@ -3,7 +3,7 @@ import Layout from "../../components/layout";
 import { graphql } from "gatsby";
 import Nav from "../../components/nav";
 import classNames from "classnames";
-import SEO from "../../components/seo";
+import Seo from "../../components/seo";
 
 const BlogPost: React.FC = ({ data, children }) => {
   const div = (
@@ -44,5 +44,5 @@ export const Head = ({ data }) => {
   const { author, describe, labels, title } = frontmatter;
   const description = describe || excerpt;
 
-  return <SEO description={description} title={title} />;
+  return <Seo description={description} title={title} />;
 };

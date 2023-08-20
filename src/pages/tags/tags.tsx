@@ -1,21 +1,20 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../../components/layout";
-import "@code-hike/mdx/dist/index.css";
-import Nav from "../../components/nav";
 import Seo from "../../components/seo";
+import Layout from "../../components/layout";
+import Nav from "../../components/nav";
 import BlogList from "../../components/blogList";
 
 const Main = ({ data }) => {
   return (
     <>
-      <div className={"mb-6 mt-8 text-2xl dark:text-white"}>Andrew's Blog</div>
+      <div className={"mb-6 mt-8 text-2xl dark:text-white"}>labels</div>
       <BlogList data={data} />
     </>
   );
 };
 
-const Blog = ({ data }) => {
+const Tags = ({ data }) => {
   return (
     <Layout
       layout={"lr"}
@@ -23,13 +22,18 @@ const Blog = ({ data }) => {
         left: <Nav direction={"col"} />,
         right: <Main data={data} />,
       }}
-    ></Layout>
+    />
   );
 };
 
 export const query = graphql`
-  query {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+  query ($labels: String) {
+    allMdx(
+      limit: 2000
+      sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { labels: { nin: [$labels] } } }
+    ) {
+      totalCount
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
@@ -45,9 +49,8 @@ export const query = graphql`
     }
   }
 `;
+export default Tags;
 
-export default Blog;
-
-export const Head = () => {
-  return <Seo title={"blogs"} />;
+export const Head = ({ data }) => {
+  return <Seo title={`tags/xxx`} />;
 };

@@ -18,7 +18,8 @@ const textLinks: Array<ILinkProps> = [
   { content: "About", href: "/about" },
   { content: "Writings", href: "/blog" },
   // { content: "Talks", href: "/talk" },
-  { content: "Notes", href: "/note" },
+  { content: "Tags", href: "/tags" },
+  // { content: "Notes", href: "/note" },
   // { content: "Newsletter", href: "/newsletter" },
 ];
 
@@ -63,7 +64,17 @@ const Nav: React.FC<IHeaderProps> = (props) => {
       >
         {textLinks.map(({ href, content }, index) => {
           return (
-            <Button href={href} type={"link"} key={index}>
+            <Button
+              className={classNames(
+                "size-lg-btn",
+                "--x-shadow-md",
+                "hover:--x-shadow-bold",
+                "hover:translate-xy-2",
+              )}
+              href={href}
+              type={"link"}
+              key={index}
+            >
               {content}
             </Button>
           );
@@ -83,7 +94,17 @@ const Nav: React.FC<IHeaderProps> = (props) => {
       >
         {iconLinks.map(({ href, content }, index) => {
           return (
-            <Button key={index} href={href} type={"a"}>
+            <Button
+              className={classNames(
+                "size-lg-btn",
+                "--x-shadow-md",
+                "hover:--x-shadow-bold",
+                "hover:translate-xy-2",
+              )}
+              href={href}
+              type={"a"}
+              key={index}
+            >
               {content}
             </Button>
           );
